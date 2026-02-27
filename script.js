@@ -22,3 +22,18 @@ themeBtn.addEventListener('click', () => {
         localStorage.setItem('theme', 'light');
     }
 });
+
+function toggleMenu() {
+    const menu = document.getElementById("nav-menu");
+    const icon = document.querySelector(".hamburger-menu i");
+    
+    // Toggle the 'active' class to show/hide the menu
+    menu.classList.toggle("active");
+    
+    // Change icon from Bars to "X" when open
+    if (menu.classList.contains("active")) {
+        icon.classList.replace("fa-bars", "fa-xmark");
+    } else {
+        icon.classList.replace("fa-xmark", "fa-bars");
+    }
+}
