@@ -1,84 +1,77 @@
+/* Variables for easy theme switching */
 :root {
     --bg-color: #ffffff;
-    --text-main: #1f1f1f;
-    --text-secondary: #666666;
+    --text-main: #111827;
+    --text-secondary: #4b5563;
     --primary-blue: #5d87e0;
-    --nav-link: #333333;
-    --transition: all 0.4s ease;
+    --nav-active: #5d87e0;
+    --transition: all 0.3s ease;
 }
 
+/* Dark Mode color palette */
 body.dark-theme {
-    --bg-color: #121212;
-    --text-main: #ffffff;
-    --text-secondary: #b0b0b0;
-    --nav-link: #eeeeee;
+    --bg-color: #0f172a;
+    --text-main: #f8fafc;
+    --text-secondary: #94a3b8;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
     transition: var(--transition);
-    overflow-x: hidden;
 }
 
-/* NAVIGATION */
-nav {
+/* Navbar Styling */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 8%;
-}
-
-.logo {
-    font-size: 1.3rem;
-    font-weight: 700;
+    padding: 1.5rem 10%;
 }
 
 .nav-links {
     display: flex;
-    align-items: center;
     list-style: none;
-    gap: 2.5rem;
+    gap: 2rem;
+    align-items: center;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--nav-link);
-    font-size: 1rem;
+    color: var(--text-main);
     font-weight: 500;
-    transition: var(--transition);
 }
 
-.nav-links a.active,
-.nav-links a:hover {
-    color: var(--primary-blue);
+.nav-links a.active {
+    color: var(--nav-active);
 }
 
 .theme-toggle {
     cursor: pointer;
     font-size: 1.2rem;
+    color: var(--text-main);
 }
 
-/* HERO */
+/* Hero Section Grid */
 .hero {
-    display: flex;
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
-    padding: 5% 10%;
     min-height: 80vh;
+    padding: 0 10%;
 }
 
 .social-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .social-sidebar a {
@@ -86,80 +79,62 @@ nav {
     font-size: 1.5rem;
 }
 
-.hero-content {
-    max-width: 550px;
-    padding: 0 2rem;
-}
-
 .hero-content h1 {
-    font-size: 3.8rem;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-content h3 {
-    font-size: 1.6rem;
-    font-weight: 400;
+    font-size: 1.5rem;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .hero-content p {
     color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
+    max-width: 500px;
+    margin-bottom: 2rem;
 }
 
 .btn-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     background-color: var(--primary-blue);
     color: white;
-    border: none;
-    padding: 16px 32px;
-    border-radius: 12px;
-    font-size: 1.1rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
     font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
 }
 
-.btn-contact:hover {
-    opacity: 0.9;
-}
-
-/* IMAGE */
-.blob-shape {
-    width: 420px;
-    height: 420px;
-    background-color: var(--primary-blue);
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    overflow: hidden;
+/* Blob Image Styling */
+.hero-img {
     display: flex;
-    align-items: flex-end;
     justify-content: center;
+    position: relative;
 }
 
-.blob-shape img {
+.image-wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+/* The blue blob shape from image_d3dae9.png */
+.blob-bg {
+    position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-color: var(--primary-blue);
+    /* Created using custom border-radius for an organic shape */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    z-index: -1;
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .social-sidebar {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .blob-shape {
-        width: 300px;
-        height: 300px;
-    }
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Optional: can clip image to blob if desired */
 }

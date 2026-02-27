@@ -4,262 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanan Haseem | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* 1. THEME VARIABLES */
-        :root {
-            --bg-color: #ffffff;
-            --text-main: #1f1f1f;
-            --text-secondary: #666666;
-            --primary-blue: #5d87e0;
-            --nav-link: #333333;
-            --transition: all 0.4s ease;
-        }
-
-        /* Dark Mode Colors */
-        body.dark-theme {
-            --bg-color: #121212;
-            --text-main: #ffffff;
-            --text-secondary: #b0b0b0;
-            --nav-link: #eeeeee;
-        }
-
-        /* 2. GENERAL STYLES */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            transition: var(--transition);
-            overflow-x: hidden;
-        }
-
-        /* 3. NAVIGATION */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 8%;
-        }
-
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--nav-link);
-            font-size: 1rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-links a.active, .nav-links a:hover {
-            color: var(--primary-blue);
-        }
-
-        .theme-toggle {
-            cursor: pointer;
-            font-size: 1.2rem;
-            margin-left: 1rem;
-            transition: transform 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            transform: rotate(15deg);
-        }
-
-        /* 4. HERO SECTION */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 5% 10%;
-            min-height: 80vh;
-        }
-
-        /* Sidebar Icons */
-        .social-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .social-sidebar a {
-            color: var(--primary-blue);
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-        }
-
-        .social-sidebar a:hover {
-            transform: translateX(5px);
-        }
-
-        /* Bio Content */
-        .hero-content {
-            max-width: 550px;
-            padding: 0 2rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3.8rem;
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-content h3 {
-            font-size: 1.6rem;
-            font-weight: 400;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-content p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-        }
-
-        .btn-contact {
-            background-color: var(--primary-blue);
-            color: white;
-            border: none;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: var(--transition);
-        }
-
-        .btn-contact:hover {
-            opacity: 0.9;
-            box-shadow: 0 8px 25px rgba(93, 135, 224, 0.4);
-        }
-
-        /* 5. IMAGE BLOB */
-        .image-container {
-            position: relative;
-        }
-
-        .blob-shape {
-            width: 420px;
-            height: 420px;
-            background-color: var(--primary-blue);
-            /* Custom "Liquid" shape */
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-            overflow: hidden;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .blob-shape img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* 6. RESPONSIVE */
-        @media (max-width: 992px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 2rem;
-            }
-            .nav-links { display: none; } /* Mobile menu would go here */
-            .social-sidebar { flex-direction: row; justify-content: center; order: 3; }
-            .btn-contact { margin: 0 auto; }
-            .blob-shape { width: 300px; height: 300px; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Hanan Haseem</div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+                <li class="theme-toggle" id="theme-btn">
+                    <i class="fa-solid fa-moon"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <nav>
-        <div class="logo">Hanan Haseem</div>
-        <ul class="nav-links">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Education</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-            <li class="theme-toggle" id="theme-btn">
-                <i class="fa-solid fa-moon"></i>
-            </li>
-        </ul>
-    </nav>
-
-    <section class="hero">
-        <div class="social-sidebar">
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    <main class="hero">
+        <aside class="social-sidebar">
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="#"><i class="fa-regular fa-envelope"></i></a>
             <a href="#"><i class="fa-brands fa-github"></i></a>
-        </div>
+        </aside>
 
-        <div class="hero-content">
+        <section class="hero-content">
             <h1>Hi, I'm Hanan Haseem</h1>
-            <h3>I'm a Undergraduate Student</h3>
-            <p>
-                Specializing in Information Communication Technology with a focus on 
-                Software Technology. I'm passionate about leveraging technology 
-                to create innovative solutions.
-            </p>
-            <button class="btn-contact">
-                Contact Me <i class="fa-regular fa-paper-plane"></i>
-            </button>
-        </div>
+            <h3>I'm an Undergraduate Student</h3>
+            <p>Specializing in Information Communication Technology with a focus on Software Technology. I'm passionate about leveraging technology to create innovative solutions.</p>
+            <a href="#" class="btn-contact">Contact Me <i class="fa-regular fa-paper-plane"></i></a>
+        </section>
 
-        <div class="image-container">
-            <div class="blob-shape">
-                <img src="your-photo.png" alt="Hanan Haseem">
+        <section class="hero-img">
+            <div class="image-wrapper">
+                <div class="blob-bg"></div>
+                <img src="profile.png" alt="Hanan Haseem">
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <script>
-        const themeBtn = document.getElementById('theme-btn');
-        const icon = themeBtn.querySelector('i');
-        const body = document.body;
-
-        // Check for saved user preference
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark-theme');
-            icon.classList.replace('fa-moon', 'fa-sun');
-        }
-
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('dark-theme');
-            
-            if (body.classList.contains('dark-theme')) {
-                icon.classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                icon.classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
