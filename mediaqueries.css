@@ -18,19 +18,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .about-details-container {
-        flex-direction: column;
-        gap: 2rem;
-        text-align: center;
-    }
-    
-    .about-pic-container {
-        width: 250px;
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 1200px) {
   .about-details-container {
     flex-direction: column;
     text-align: center;
