@@ -1,31 +1,16 @@
-/* --- 6. MOBILE RESPONSIVE --- */
-@media (max-width: 1024px) {
-    .hero { 
-        grid-template-columns: 1fr; 
-        text-align: center; 
-        padding-top: 100px; 
-    }
-    .socials { 
-        flex-direction: row; 
-        justify-content: center; 
-        order: 3; 
-    }
-    .hero-text { order: 2; }
-    .hero-img { order: 1; }
-    .hero-text p { margin-inline: auto; }
-    .circle-container { width: 300px; height: 300px; }
-    .nav-links { display: none; }
-}
-
 @media screen and (max-width: 1200px) {
-    .about-details-container {
-        flex-direction: column;
-        gap: 2rem;
-        text-align: center;
-    }
-    
-    .about-pic-container {
-        width: 250px;
-        height: auto;
-    }
+  .about-details-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .about-pic-container {
+    width: 280px;
+    height: 380px;
+  }
+
+  .about-text-container p {
+    text-align: center;
+  }
 }
