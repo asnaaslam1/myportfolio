@@ -56,3 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const bars = document.querySelectorAll(".progress-bar");
+    bars.forEach(bar => {
+        const fill = bar.querySelector(".progress-fill");
+        const progress = bar.getAttribute("data-progress");
+        setTimeout(() => {
+            fill.style.width = progress;
+        }, 200);
+    });
+});
