@@ -100,13 +100,3 @@
     .socials { order: 3; flex-direction: row; justify-content: center; }
 }
 
-@media screen and (max-width: 1024px) {
-    .about-details-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .skills-container {
-        padding: 0 2rem;
-    }
-}
