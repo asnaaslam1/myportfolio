@@ -336,18 +336,7 @@ nav {
   font-weight: 700;
 }
 
-/* Nav Links */
-.footer-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 500;
-  transition: opacity 0.3s;
-}
 
-.footer-nav a:hover {
-  opacity: 0.8;
-}
 
 /* Social Icons */
 .footer-socials a {
