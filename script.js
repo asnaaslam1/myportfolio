@@ -37,3 +37,22 @@ function toggleMenu() {
         icon.classList.replace("fa-xmark", "fa-bars");
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const themeBtn = document.getElementById('theme-btn');
+
+    // Check if the button actually exists to avoid errors
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            
+            const icon = themeBtn.querySelector('i');
+            if (icon) {
+                if (document.body.classList.contains('dark-theme')) {
+                    icon.classList.replace('fa-moon', 'fa-sun');
+                } else {
+                    icon.classList.replace('fa-sun', 'fa-moon');
+                }
+            }
+        });
+    }
+});
