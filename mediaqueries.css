@@ -81,3 +81,21 @@
     .hero-text p { margin-inline: auto; }
     .circle-container { width: 250px; height: 250px; }
 }
+
+@media (max-width: 1024px) {
+    .hamburger-menu { display: block; font-size: 1.5rem; cursor: pointer; }
+    
+    .nav-links {
+        display: none; position: absolute; top: 70px; left: 0; width: 100%;
+        background: var(--bg); flex-direction: column; padding: 2rem;
+        text-align: center; border-bottom: 1px solid var(--accent);
+    }
+
+    .nav-links.active { display: flex; }
+
+    .hero { grid-template-columns: 1fr; text-align: center; padding-top: 100px; }
+    .hero-img { order: 1; display: flex; justify-content: center; }
+    .blob-container { width: 280px; height: 280px; }
+    .hero-text { order: 2; }
+    .socials { order: 3; flex-direction: row; justify-content: center; }
+}
