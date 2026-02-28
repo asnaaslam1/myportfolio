@@ -252,6 +252,64 @@ nav {
 
 
 
+/* --- CONTACT SECTION STYLES --- */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  font-family: 'Poppins', sans-serif; /* Recommended font for this look */
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #1a1a1a;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+.contact-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Spacing between rows */
+}
+
+.contact-info-row {
+  display: flex;
+  align-items: flex-start; /* Aligns icon with the first line of text */
+  gap: 20px;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: #5d81e8; /* The blue color from your icons */
+  margin-top: 5px;
+}
+
+.contact-label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.contact-value {
+  font-size: 1rem;
+  color: #777;
+  margin: 0;
+}
+
 
 
 
