@@ -310,6 +310,68 @@ nav {
   margin: 0;
 }
 
+/* Core Styling */
+.site-footer {
+  background-color: #5d83dc; /* Matches your image blue */
+  color: white;
+  padding: 60px 20px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; /* Adjust spacing between sections */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Brand Section */
+.footer-brand h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Nav Links */
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.footer-nav a:hover {
+  opacity: 0.8;
+}
+
+/* Social Icons */
+.footer-socials a {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* Bottom Copyright */
+.footer-bottom {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Responsive Tweak for Mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+}
 
 
 
