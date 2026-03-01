@@ -185,6 +185,152 @@ impact.
     </section>
 
 
+    <button class="theme-toggle" aria-label="Toggle theme">☀️</button>
+
+  <div class="container">
+    <header>
+      <h1>Qualification</h1>
+      <p class="subtitle">My personal journey</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="education">Education</button>
+      <button class="tab" data-tab="certifications">Certifications</button>
+    </div>
+
+    <!-- Education Section -->
+    <section id="education" class="timeline-section active">
+      <div class="timeline">
+
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="year">2022 – Present</div>
+          <div class="content">
+            <div class="title">BICT (Hons) in Software Technology</div>
+            <div class="issuer">University of Sri Jayewardenepura</div>
+            <div class="period">2022 – Present</div>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="dot"></div>
+          <div class="year">2020</div>
+          <div class="content">
+            <div class="title">G.C.E. Advanced Level</div>
+            <div class="issuer">Hizbullah Central College</div>
+            <div class="period">2020</div>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="year">2017</div>
+          <div class="content">
+            <div class="title">G.C.E. Ordinary Level</div>
+            <div class="issuer">Hizbullah Central College</div>
+            <div class="period">2017</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="timeline-section">
+      <div class="timeline">
+
+        <div class="timeline-item right">
+          <div class="dot"></div>
+          <div class="year">2024</div>
+          <div class="content">
+            <div class="title">Career Essentials in Generative AI and Software Development</div>
+            <div class="issuer">Microsoft and LinkedIn</div>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="year">2024</div>
+          <div class="content">
+            <div class="title">Frontend Developer (React)</div>
+            <div class="issuer">HackerRank</div>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="dot"></div>
+          <div class="year">2023</div>
+          <div class="content">
+            <div class="title">Web Development</div>
+            <div class="issuer">University of Moratuwa</div>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="year">2021</div>
+          <div class="content">
+            <div class="title">Oracle Cloud Infrastructure Foundations Associate</div>
+            <div class="issuer">Oracle • Certified 2021</div>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="dot"></div>
+          <div class="year">2023</div>
+          <div class="content">
+            <div class="title">Machine Learning with Python</div>
+            <div class="issuer">freeCodeCamp</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Theme toggle
+    const toggle = document.querySelector('.theme-toggle');
+    const html = document.documentElement;
+
+    function initTheme() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = saved || (prefersDark ? 'dark' : 'light');
+      html.setAttribute('data-theme', theme);
+      toggle.textContent = theme === 'light' ? '☀️' : '🌙';
+      localStorage.setItem('theme', theme);
+    }
+
+    toggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      toggle.textContent = next === 'light' ? '☀️' : '🌙';
+      localStorage.setItem('theme', next);
+    });
+
+    // Tab switching
+    const tabs = document.querySelectorAll('.tab');
+    const sections = document.querySelectorAll('.timeline-section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active from all tabs & sections
+        tabs.forEach(t => t.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+
+        // Add active to clicked tab & corresponding section
+        tab.classList.add('active');
+        const target = tab.getAttribute('data-tab');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+    initTheme();
+  </script>
+
+
     <!-- JavaScript -->
     <script src="script.js"></script>
 
