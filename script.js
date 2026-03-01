@@ -1,60 +1,65 @@
+// ===================================================
+// THEME TOGGLE
+// ===================================================
 const themeBtn = document.getElementById('theme-btn');
-const icon = themeBtn.querySelector('i');
-const body = document.body;
+const html = document.documentElement;
 
-// Load saved theme preference on startup
-if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-theme');
-    icon.classList.replace('fa-moon', 'fa-sun');
+// Initialize theme on page load
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    
+    html.setAttribute('data-theme', theme);
+    updateThemeIcon(theme);
 }
 
-themeBtn.addEventListener('click', () => {
-    // Toggle the class on the body
-    body.classList.toggle('dark-theme');
-    const isDark = body.classList.contains('dark-theme');
-    
-    // Change icon between Moon and Sun
-    if (isDark) {
+// Update theme icon
+function updateThemeIcon(theme) {
+    const icon = themeBtn.querySelector('i');
+    if (theme === 'dark') {
         icon.classList.replace('fa-moon', 'fa-sun');
-        localStorage.setItem('theme', 'dark');
     } else {
         icon.classList.replace('fa-sun', 'fa-moon');
-        localStorage.setItem('theme', 'light');
     }
+}
+
+// Toggle theme on button click
+themeBtn.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
 });
 
+// Initialize theme
+initTheme();
+
+// ===================================================
+// MOBILE MENU TOGGLE
+// ===================================================
 function toggleMenu() {
     const menu = document.getElementById("nav-menu");
     const icon = document.querySelector(".hamburger-menu i");
     
-    // Toggle the 'active' class to show/hide the menu
     menu.classList.toggle("active");
     
-    // Change icon from Bars to "X" when open
     if (menu.classList.contains("active")) {
         icon.classList.replace("fa-bars", "fa-xmark");
     } else {
         icon.classList.replace("fa-xmark", "fa-bars");
     }
 }
-function toggleSkills(element) {
-    const parent = element.parentNode;
 
-    if (parent.classList.contains('skills__open')) {
-        parent.classList.replace('skills__open', 'skills__close');
-    } else {
-        // Optional: Close other accordions when one is opened
-        const allContent = document.querySelectorAll('.skills__content');
-        allContent.forEach(item => item.classList.replace('skills__open', 'skills__close'));
-        
-        parent.classList.replace('skills__close', 'skills__open');
-    }
-}
-
-// ACCORDION
+// ===================================================
+// SKILLS ACCORDION
+// ===================================================
 function toggleSkills(element) {
     const parent = element.parentElement;
 
+    // Close all other accordions
     document.querySelectorAll(".skills__content").forEach(item => {
         if (item !== parent) {
             item.classList.remove("skills__open");
@@ -62,27 +67,84 @@ function toggleSkills(element) {
         }
     });
 
+    // Toggle current accordion
     parent.classList.toggle("skills__open");
     parent.classList.toggle("skills__close");
 }
 
-// THEME TOGGLE
-const themeButton = document.getElementById("theme-toggle");
+// ===================================================
+// SMOOTH SCROLL FOR NAVIGATION
+// ===================================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    });
+});
 
-// Load saved theme
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-theme");
-    themeButton.textContent = "☀️";
-}
+// ===================================================
+// ACTIVE NAVIGATION HIGHLIGHT
+// ===================================================
+const sections = document.querySelectorAll('section[id], main[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
 
-themeButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
+window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
 
-    if (document.body.classList.contains("dark-theme")) {
-        themeButton.textContent = "☀️";
-        localStorage.setItem("theme", "dark");
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// ===================================================
+// SCROLL TO TOP BUTTON
+// ===================================================
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('visible');
     } else {
-        themeButton.textContent = "🌙";
-        localStorage.setItem("theme", "light");
+        scrollTopBtn.classList.remove('visible');
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// ===================================================
+// NAVBAR SHRINK ON SCROLL
+// ===================================================
+const navbar = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
     }
 });

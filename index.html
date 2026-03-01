@@ -1,212 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asna Aslam| Portfolio</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asna Aslam| Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaqueries.css">
 </head>
+
 <body id="home">
 
-    <nav>
+  <nav>
     <div class="logo">Asna Aslam </div>
     <div class="hamburger-menu" onclick="toggleMenu()">
-        <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-bars"></i>
     </div>
     <ul class="nav-links" id="nav-menu">
-        <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-        <li><a href="#education" onclick="toggleMenu()">Education</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+      <li><a href="#about" onclick="toggleMenu()">About</a></li>
+      <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+      <li><a href="#education" onclick="toggleMenu()">Education</a></li>
+      <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
     </ul>
     <div class="theme-toggle" id="theme-btn">
-        <i class="fa-solid fa-moon"></i>
+      <i class="fa-solid fa-moon"></i>
     </div>
-</nav>
+  </nav>
 
-    <main class="hero">
-        <aside class="socials">
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-regular fa-envelope"></i></a>
-            <a href="#"><i class="fa-brands fa-github"></i></a>
-        </aside>
+  <main class="hero">
+    <aside class="socials">
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-regular fa-envelope"></i></a>
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+    </aside>
 
-        <section class="hero-text">
-            <h1>Hi, I'm Asna Aslam </h1>
-            <h3>I'm an Undergraduate Student</h3>
-            <p>I’m an enthusiastic IT student passionate about turning 
-ideas into innovative, user-focused solutions. I apply 
-software engineering best practices like clean code, 
-version control, agile methods, and test-driven 
-development to build efficient systems. With skills in 
-graphic design and UI/UX, I create intuitive, visually 
-engaging interfaces. Always learning, I aim to 
-combine technology and design to make a 
-meaningful impact. Constantly learning and 
-adapting, I’m excited by the opportunity to combine 
-technology and design to make a meaningful 
-impact.
-</p>
-            <a href="#" class="btn">Contact Me <i class="fa-regular fa-paper-plane"></i></a>
-        </section>
+    <section class="hero-text">
+      <h1>Hi, I'm Asna Aslam </h1>
+      <h3>I'm an Undergraduate Student</h3>
+      <p>I’m an enthusiastic IT student passionate about turning
+        ideas into innovative, user-focused solutions. I apply
+        software engineering best practices like clean code,
+        version control, agile methods, and test-driven
+        development to build efficient systems. With skills in
+        graphic design and UI/UX, I create intuitive, visually
+        engaging interfaces. Always learning, I aim to
+        combine technology and design to make a
+        meaningful impact. Constantly learning and
+        adapting, I’m excited by the opportunity to combine
+        technology and design to make a meaningful
+        impact.
+      </p>
+      <a href="#" class="btn">Contact Me <i class="fa-regular fa-paper-plane"></i></a>
+    </section>
 
-        <section class="hero-img">
-            <div class="circle-container">
-                 <img src="./assets/Profile-pic.jpg" alt="Asna Aslam profile picture" />
-            </div>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
-
-    <section id="about">
-<h1 class="title">About Me</h1>
-  <p class="section__text__p1">My introduction</p>
-  <div class="section-container">
-    <div class="about-details-container">
-      <div class="about-pic-container">
-        <img src="assets/about-pic.jpg" alt="About profile picture" class="about-pic" />
+    <section class="hero-img">
+      <div class="circle-container">
+        <img src="./assets/Profile-pic.jpg" alt="Asna Aslam profile picture" />
       </div>
-      <div class="about-text-container">
-        <p>
-          I'm currently pursuing a bachelor's degree in Computer Science 
-          with a focus on Software Technology. My passion for technology has led me to 
-          develop a strong foundation in programming languages like Java, Python, C, and C#, 
-          as well as skills in databases, software engineering, networking, and operating systems. 
-          I'm proficient in MySQL, SQL Server, HTML, CSS, and PHP, and I'm exploring machine learning 
-          with tools like Jupyter Notebook. I also work with development environments such as 
-          Eclipse, NetBeans, and Visual Studio Code, and use Adobe Illustrator for design. 
-          I'm eager to apply my skills to innovative tech projects.
-        </p>
-        <button class="btn btn-color-1" onclick="window.open('assets/resume.pdf')">
-          Download CV <i class="fa-solid fa-file-arrow-down"></i>
-        </button>
+    </section>
+  </main>
+
+  <section id="about">
+    <div class="section-header">
+      <h2 class="title">About Me</h2>
+      <p class="section__text__p1">My introduction</p>
+    </div>
+    <div class="section-container">
+      <div class="about-details-container">
+        <div class="about-pic-container">
+          <img src="assets/about-pic.jpg" alt="About profile picture" class="about-pic" />
+        </div>
+        <div class="about-text-container">
+          <p>
+            I'm currently pursuing a bachelor's degree in Computer Science
+            with a focus on Software Technology. My passion for technology has led me to
+            develop a strong foundation in programming languages like Java, Python, C, and C#,
+            as well as skills in databases, software engineering, networking, and operating systems.
+            I'm proficient in MySQL, SQL Server, HTML, CSS, and PHP, and I'm exploring machine learning
+            with tools like Jupyter Notebook. I also work with development environments such as
+            Eclipse, NetBeans, and Visual Studio Code, and use Adobe Illustrator for design.
+            I'm eager to apply my skills to innovative tech projects.
+          </p>
+          <button class="btn btn-color-1" onclick="window.open('assets/resume.pdf')">
+            Download CV <i class="fa-solid fa-file-arrow-down"></i>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-    <!-- =========================
+  <!-- =========================
          SKILLS SECTION
     ========================== -->
 
-    <section class="skills section">
-        <h2 class="section__title">Skills</h2>
-        <span class="section__subtitle">My technical level</span>
+  <section id="skills" class="skills section">
+    <div class="section-header">
+      <h2 class="title">Skills</h2>
+      <p class="section__text__p1">My technical level</p>
+    </div>
 
-        <div class="skills__container container">
+    <div class="skills__container">
 
-            <!-- Technical Skills -->
-            <div class="skills__content skills__open">
-                <div class="skills__header" onclick="toggleSkills(this)">
-                    <i class="fa-solid fa-code skills__icon"></i>
-                    <div>
-                        <h1 class="skills__title">Technical Skills</h1>
-                    </div>
-                    <i class="fa-solid fa-chevron-down skills__arrow"></i>
-                </div>
-
-                <div class="skills__list">
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">HTML</h3>
-                            <span class="skills__number">90%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage" style="width: 90%"></span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">JavaScript</h3>
-                            <span class="skills__number">80%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage" style="width: 80%"></span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">Java</h3>
-                            <span class="skills__number">90%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage" style="width: 90%"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Soft Skills -->
-            <div class="skills__content skills__close">
-                <div class="skills__header" onclick="toggleSkills(this)">
-                    <i class="fa-solid fa-server skills__icon"></i>
-                    <div>
-                        <h1 class="skills__title">Soft Skills</h1>
-                    </div>
-                    <i class="fa-solid fa-chevron-down skills__arrow"></i>
-                </div>
-
-                <div class="skills__list">
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">Leadership</h3>
-                            <span class="skills__number">90%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage" style="width: 90%"></span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">Problem Solving</h3>
-                            <span class="skills__number">90%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage" style="width: 90%"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+      <!-- Technical Skills -->
+      <div class="skills__content skills__open">
+        <div class="skills__header" onclick="toggleSkills(this)">
+          <i class="fa-solid fa-code skills__icon"></i>
+          <div>
+            <h3 class="skills__title">Technical Skills</h3>
+          </div>
+          <i class="fa-solid fa-chevron-down skills__arrow"></i>
         </div>
-    </section>
+
+        <div class="skills__list">
+          <div class="skills__data">
+            <div class="skills__titles">
+              <h3 class="skills__name">HTML</h3>
+              <span class="skills__number">90%</span>
+            </div>
+            <div class="skills__bar">
+              <span class="skills__percentage" style="width: 90%"></span>
+            </div>
+          </div>
+
+          <div class="skills__data">
+            <div class="skills__titles">
+              <h3 class="skills__name">JavaScript</h3>
+              <span class="skills__number">80%</span>
+            </div>
+            <div class="skills__bar">
+              <span class="skills__percentage" style="width: 80%"></span>
+            </div>
+          </div>
+
+          <div class="skills__data">
+            <div class="skills__titles">
+              <h3 class="skills__name">Java</h3>
+              <span class="skills__number">90%</span>
+            </div>
+            <div class="skills__bar">
+              <span class="skills__percentage" style="width: 90%"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="skills__content skills__close">
+        <div class="skills__header" onclick="toggleSkills(this)">
+          <i class="fa-solid fa-server skills__icon"></i>
+          <div>
+            <h3 class="skills__title">Soft Skills</h3>
+          </div>
+          <i class="fa-solid fa-chevron-down skills__arrow"></i>
+        </div>
+
+        <div class="skills__list">
+          <div class="skills__data">
+            <div class="skills__titles">
+              <h3 class="skills__name">Leadership</h3>
+              <span class="skills__number">90%</span>
+            </div>
+            <div class="skills__bar">
+              <span class="skills__percentage" style="width: 90%"></span>
+            </div>
+          </div>
+
+          <div class="skills__data">
+            <div class="skills__titles">
+              <h3 class="skills__name">Problem Solving</h3>
+              <span class="skills__number">90%</span>
+            </div>
+            <div class="skills__bar">
+              <span class="skills__percentage" style="width: 90%"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 
-  <div class="container">
-    <header>
-      <h1>Qualification</h1>
-      <p class="subtitle">My personal journey</p>
-    </header>
+  <section id="education" class="qualification-section">
+    <div class="section-header">
+      <h2 class="title">Qualification</h2>
+      <p class="section__text__p1">My personal journey</p>
+    </div>
 
     <div class="tabs">
-      <button class="tab active" data-tab="education">Education</button>
+      <button class="tab active" data-tab="education-content">Education</button>
       <button class="tab" data-tab="certifications">Certifications</button>
     </div>
 
     <!-- Education Section -->
-    <section id="education" class="timeline-section active">
+    <div id="education-content" class="timeline-section active">
       <div class="timeline">
 
         <div class="timeline-item left">
           <div class="dot"></div>
           <div class="year">2026 – Present</div>
           <div class="content">
-            <div class="title">BSc (Hons) Comuter Science in Software Engineering </div>
-            <div class="issuer">ESOFT Uni</div>
-            <div class="period">2026 – Present</div>
+            <h4 class="timeline-title">BSc (Hons) Computer Science in Software Engineering</h4>
+            <p class="issuer">ESOFT Uni</p>
+            <p class="period">2026 – Present</p>
           </div>
         </div>
 
@@ -214,9 +219,9 @@ impact.
           <div class="dot"></div>
           <div class="year">2020</div>
           <div class="content">
-            <div class="title">G.C.E. Advanced Level</div>
-            <div class="issuer">Ku/Giri/Madeeena National School</div>
-            <div class="period">reading</div>
+            <h4 class="timeline-title">G.C.E. Advanced Level</h4>
+            <p class="issuer">Ku/Giri/Madeeena National School</p>
+            <p class="period">reading</p>
           </div>
         </div>
 
@@ -224,146 +229,96 @@ impact.
           <div class="dot"></div>
           <div class="year">2020</div>
           <div class="content">
-            <div class="title">G.C.E. Ordinary Level</div>
-            <div class="issuer">>Ku/Giri/Madeeena National School</div>
-            <div class="period">2020</div>
+            <h4 class="timeline-title">G.C.E. Ordinary Level</h4>
+            <p class="issuer">Ku/Giri/Madeeena National School</p>
+            <p class="period">2020</p>
           </div>
         </div>
 
       </div>
-    </section>
+    </div>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="timeline-section">
+    <div id="certifications" class="timeline-section">
       <div class="timeline">
 
         <div class="timeline-item right">
           <div class="dot"></div>
           <div class="year">2024</div>
-          <div class="content">
-            <div class="title">Diploma of Education,English</div>
-            <div class="issuer">ESOFT Metro Campus</div>
-          </div>
-        </div>
 
-        <div class="timeline-item left">
-          <div class="dot"></div>
-          <div class="year">2024</div>
-          <div class="content">
-            <div class="title">Diploma of Education,Information Technology </div>
-            <div class="issuer">ESOFT Metro Campus</div>
+          <div class="timeline-item right">
+            <div class="dot"></div>
+            <div class="year">2024</div>
+            <div class="content">
+              <h4 class="timeline-title">Diploma of Education, English</h4>
+              <p class="issuer">ESOFT Metro Campus</p>
+            </div>
           </div>
-        </div>
 
-        <div class="timeline-item right">
-          <div class="dot"></div>
-          <div class="year">2023</div>
-          <div class="content">
-            <div class="title">Web Development</div>
-            <div class="issuer">University of Moratuwa</div>
+          <div class="timeline-item left">
+            <div class="dot"></div>
+            <div class="year">2024</div>
+            <div class="content">
+              <h4 class="timeline-title">Diploma of Education, Information Technology</h4>
+              <p class="issuer">ESOFT Metro Campus</p>
+            </div>
           </div>
-        </div>
 
-        <div class="timeline-item left">
-          <div class="dot"></div>
-          <div class="year">2021</div>
-          <div class="content">
-            <div class="title">Oracle Cloud Infrastructure Foundations Associate</div>
-            <div class="issuer">Oracle • Certified 2021</div>
+          <div class="timeline-item right">
+            <div class="dot"></div>
+            <div class="year">2023</div>
+            <div class="content">
+              <h4 class="timeline-title">Web Development</h4>
+              <p class="issuer">University of Moratuwa</p>
+            </div>
           </div>
-        </div>
 
-        <div class="timeline-item right">
-          <div class="dot"></div>
-          <div class="year">2023</div>
-          <div class="content">
-            <div class="title">Machine Learning with Python</div>
-            <div class="issuer">freeCodeCamp</div>
+          <div class="timeline-item left">
+            <div class="dot"></div>
+            <div class="year">2021</div>
+            <div class="content">
+              <h4 class="timeline-title">Oracle Cloud Infrastructure Foundations Associate</h4>
+              <p class="issuer">Oracle • Certified 2021</p>
+            </div>
           </div>
-        </div>
 
+          <div class="timeline-item right">
+            <div class="dot"></div>
+            <div class="year">2023</div>
+            <div class="content">
+              <h4 class="timeline-title">Machine Learning with Python</h4>
+              <p class="issuer">freeCodeCamp</p>
+            </div>
+          </div>
+
+        </div>
       </div>
-    </section>
-  </div>
+  </section>
 
   <script>
-    // Theme toggle
-    const toggle = document.querySelector('.theme-toggle');
-    const html = document.documentElement;
-
-    function initTheme() {
-      const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = saved || (prefersDark ? 'dark' : 'light');
-      html.setAttribute('data-theme', theme);
-      toggle.textContent = theme === 'light' ? '☀️' : '🌙';
-      localStorage.setItem('theme', theme);
-    }
-
-    toggle.addEventListener('click', () => {
-      const current = html.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      toggle.textContent = next === 'light' ? '☀️' : '🌙';
-      localStorage.setItem('theme', next);
-    });
-
-    // Tab switching
+    // Tab switching for qualification section
     const tabs = document.querySelectorAll('.tab');
-    const sections = document.querySelectorAll('.timeline-section');
+    const timelineSections = document.querySelectorAll('.timeline-section');
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // Remove active from all tabs & sections
         tabs.forEach(t => t.classList.remove('active'));
-        sections.forEach(s => s.classList.remove('active'));
+        timelineSections.forEach(s => s.classList.remove('active'));
 
-        // Add active to clicked tab & corresponding section
         tab.classList.add('active');
         const target = tab.getAttribute('data-tab');
         document.getElementById(target).classList.add('active');
       });
     });
-
-    initTheme();
   </script>
 
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-
-     <div class="hero-card">
-    <div class="content">
-
-      <!-- Replace with your actual photo URL -->
-      <img 
-        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=80" 
-        alt="Profile Photo" 
-        class="profile-image"
-      />
-
-      <h1 class="title">Passionated About Technology</h1>
-
-      <p class="description">
-        As an ICT enthusiast with a focus on Software Technology.
-      </p>
-
-      <!-- Replace href with your actual CV file link -->
-      <a href="your-cv-file.pdf" download class="btn-download">
-        <span class="btn-icon">↓</span> Download CV
-      </a>
-
+  <section id="contact">
+    <div class="section-header">
+      <h2 class="title">Contact Me</h2>
+      <p class="section__text__p1">Get in touch</p>
     </div>
-  </div>
 
-
-<section id="contact">
-  <div class="contact-header">
-    <h1 class="title">Contact me</h1>
-  <p class="section__text__p1">Get in touch</p>
-  </div>
-
-  <div class="contact-details-container">
+    <div class="contact-details-container"></div>
     <div class="contact-info-row">
       <i class="fa-solid fa-phone-volume contact-icon"></i>
       <div class="contact-text">
@@ -387,31 +342,87 @@ impact.
         <p class="contact-value">Colombo, Sri Lanka</p>
       </div>
     </div>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-brand">
-      <h1>Asna<br>Aslam</h1>
     </div>
+  </section>
 
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-main">
+        
+        <!-- Brand Section -->
+        <div class="footer-section footer-brand">
+          <h2 class="footer-logo">Asna Aslam</h2>
+          <p class="footer-description">
+            Passionate IT student specializing in software engineering, 
+            UI/UX design, and innovative tech solutions.
+          </p>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn" class="social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" aria-label="GitHub" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" aria-label="Email" class="social-link">
+              <i class="far fa-envelope"></i>
+            </a>
+            <a href="#" aria-label="Twitter" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
 
-    
-    <div class="footer-socials">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section">
+          <h3 class="footer-heading">Get In Touch</h3>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:asnaaslam91@gmail.com">asnaaslam91@gmail.com</a>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <a href="tel:+94770710772">(+94) 770 710 772</a>
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Colombo, Sri Lanka</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p class="copyright">
+            &copy; 2026 Asna Aslam. All rights reserved.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
+  </footer>
 
-  <div class="footer-bottom">
-    <p>&copy; Asna Aslam. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-
-
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 
 </body>
+
 </html>
