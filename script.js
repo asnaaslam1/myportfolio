@@ -37,3 +37,16 @@ function toggleMenu() {
         icon.classList.replace("fa-xmark", "fa-bars");
     }
 }
+function toggleSkills(element) {
+    const parent = element.parentNode;
+
+    if (parent.classList.contains('skills__open')) {
+        parent.classList.replace('skills__open', 'skills__close');
+    } else {
+        // Optional: Close other accordions when one is opened
+        const allContent = document.querySelectorAll('.skills__content');
+        allContent.forEach(item => item.classList.replace('skills__open', 'skills__close'));
+        
+        parent.classList.replace('skills__close', 'skills__open');
+    }
+}
