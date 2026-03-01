@@ -1,40 +1,64 @@
-/* --- 1. DESIGN SYSTEM --- */
+/* ===================================================
+   1. DESIGN SYSTEM (LIGHT MODE DEFAULT)
+=================================================== */
 :root {
+    --primary: #5d83dc;
     --bg-body: #ffffff;
     --bg-nav: rgba(255, 255, 255, 0.9);
-    --text-main: #111827;
-    --text-secondary: #4b5563;
-    --primary: #5d87e0;
+    --bg-section: #f9fafb;
+    --card-bg: #ffffff;
     --accent: #f3f4f6;
     --border: #e5e7eb;
+
+    --text-main: #111827;
+    --text-secondary: #6b7280;
+
+    --bg-bar: #dae3f8;
+
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Dark Mode Colors */
+/* ===================================================
+   2. DARK MODE
+=================================================== */
 body.dark-theme {
+    --primary: #5d83dc;
     --bg-body: #0f172a;
     --bg-nav: rgba(15, 23, 42, 0.9);
-    --text-main: #f8fafc;
-    --text-secondary: #94a3b8;
+    --bg-section: #111827;
+    --card-bg: #1e293b;
     --accent: #1e293b;
     --border: #334155;
+
+    --text-main: #f8fafc;
+    --text-secondary: #94a3b8;
+
+    --bg-bar: #2c2c2c;
 }
 
-/* --- 2. GLOBAL STYLES --- */
+/* ===================================================
+   3. GLOBAL STYLES
+=================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
 }
 
 body {
+    font-family: 'Poppins', 'Inter', sans-serif;
     background-color: var(--bg-body);
     color: var(--text-main);
     transition: var(--transition);
 }
 
-/* --- 3. NAVIGATION --- */
+.section {
+    padding: 5rem 10%;
+}
+
+/* ===================================================
+   4. NAVIGATION
+=================================================== */
 nav {
     display: flex;
     justify-content: space-between;
@@ -49,9 +73,17 @@ nav {
     border-bottom: 1px solid var(--border);
 }
 
-.logo { font-size: 1.25rem; font-weight: 700; }
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
 
-.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
 
 .nav-links a {
     text-decoration: none;
@@ -60,7 +92,10 @@ nav {
     transition: var(--transition);
 }
 
-.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+}
 
 .theme-toggle {
     cursor: pointer;
@@ -69,11 +104,12 @@ nav {
     padding: 8px;
     border-radius: 50%;
     background: var(--accent);
-    display: flex;
     transition: var(--transition);
 }
 
-/* --- 4. HERO SECTION --- */
+/* ===================================================
+   5. HERO SECTION
+=================================================== */
 .hero {
     display: grid;
     grid-template-columns: 80px 1fr 1fr;
@@ -83,7 +119,11 @@ nav {
     gap: 2rem;
 }
 
-.socials { display: flex; flex-direction: column; gap: 1.5rem; }
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
 
 .socials a {
     color: var(--primary);
@@ -91,9 +131,24 @@ nav {
     transition: var(--transition);
 }
 
-.hero-text h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 0.5rem; }
-.hero-text h3 { font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
-.hero-text p { color: var(--text-secondary); max-width: 480px; margin-bottom: 2.5rem; font-size: 1.1rem; }
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text h3 {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
 
 .btn {
     background: var(--primary);
@@ -108,8 +163,16 @@ nav {
     transition: var(--transition);
 }
 
-/* --- 5. CIRCLE IMAGE --- */
-.hero-img { display: flex; justify-content: center; }
+.btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.05);
+}
+
+/* HERO IMAGE */
+.hero-img {
+    display: flex;
+    justify-content: center;
+}
 
 .circle-container {
     width: 400px;
@@ -117,7 +180,6 @@ nav {
     border-radius: 50%;
     overflow: hidden;
     border: 8px solid var(--accent);
-    transition: var(--transition);
 }
 
 .circle-container img {
@@ -126,189 +188,68 @@ nav {
     object-fit: cover;
 }
 
-/* --- MOBILE NAVIGATION LOGIC --- */
-.hamburger-menu {
-    display: none; /* Hidden on desktop */
-    cursor: pointer;
-    font-size: 1.5rem;
-}
-
-@media (max-width: 1024px) {
-    .hamburger-menu {
-        display: block; /* Show on mobile */
-    }
-
-    .nav-links {
-        display: none; /* Hidden by default on mobile */
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: var(--bg-nav);
-        padding: 2rem 0;
-        border-bottom: 1px solid var(--border);
-        gap: 1.5rem;
-        text-align: center;
-    }
-
-    /* This class is added via JavaScript when you click the menu */
-    .nav-links.active {
-        display: flex;
-    }
-
-    /* --- YOUR EXISTING HERO UPDATES --- */
-    .hero { 
-        grid-template-columns: 1fr; 
-        text-align: center; 
-        padding-top: 100px; 
-    }
-    .socials { 
-        flex-direction: row; 
-        justify-content: center; 
-        order: 3; 
-    }
-    .hero-text { order: 2; }
-    .hero-img { order: 1; }
-    .hero-text p { margin-inline: auto; }
-    .circle-container { width: 250px; height: 250px; }
-}
-
-/* --- ABOUT SECTION STYLES --- */
+/* ===================================================
+   6. ABOUT SECTION
+=================================================== */
 #about {
-  position: relative;
-  padding-top: 4rem;
-}
-
-.section__text__p1 {
-  text-align: center;
-  color: var(--text-secondary);
+    background: var(--bg-section);
 }
 
 .title {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 2rem;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .section-container {
-  display: flex;
-  justify-content: center;
-  padding: 0 10%;
+    display: flex;
+    justify-content: center;
 }
 
 .about-details-container {
-  display: flex;
-  align-items: center;
-  gap: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
 }
 
-/* Photo Styling */
 .about-pic-container {
-  height: 450px;
-  width: 350px;
-  flex-shrink: 0;
+    height: 450px;
+    width: 350px;
+    flex-shrink: 0;
 }
 
 .about-pic {
-  border-radius: 20px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Text & Button Styling */
-.about-text-container {
-  flex: 1;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about-text-container p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-  text-align: justify;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    text-align: justify;
 }
 
 .btn-color-1 {
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: var(--transition);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 .btn-color-1:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.1);
+    transform: translateY(-3px);
 }
 
-/* ===============================
-   ROOT VARIABLES (LIGHT DEFAULT)
-================================ */
-:root {
-    --main-color: #5d83dc;
-    --text-color: #333;
-    --bg-color: #ffffff;
-    --card-bg: #ffffff;
-    --bg-bar: #dae3f8;
-}
-
-/* ===============================
-   DARK THEME VARIABLES
-================================ */
-body.dark-theme {
-    --main-color: #5d83dc;
-    --text-color: #ffffff;
-    --bg-color: #121212;
-    --card-bg: #1e1e1e;
-    --bg-bar: #2c2c2c;
-}
-
-/* ===============================
-   GLOBAL
-================================ */
-body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    transition: 0.3s ease;
-}
-
-.container {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-.section {
-    padding: 4rem 0;
-}
-
-.section__title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 0.25rem;
-}
-
-.section__subtitle {
-    display: block;
-    text-align: center;
-    font-size: 0.8rem;
-    color: #888;
-    margin-bottom: 3rem;
-}
-
-/* ===============================
-   ACCORDION HEADER
-================================ */
+/* ===================================================
+   7. SKILLS SECTION
+=================================================== */
 .skills__header {
     display: flex;
     align-items: center;
@@ -317,214 +258,123 @@ body {
     padding: 1rem;
     background: var(--card-bg);
     border-radius: 8px;
-    transition: 0.3s;
+    transition: var(--transition);
 }
 
 .skills__icon {
     font-size: 2rem;
-    color: var(--main-color);
+    color: var(--primary);
     margin-right: 0.75rem;
-}
-
-.skills__title {
-    font-size: 1.25rem;
 }
 
 .skills__arrow {
     margin-left: auto;
     font-size: 1.2rem;
-    color: var(--main-color);
-    transition: .4s;
+    color: var(--primary);
+    transition: 0.4s;
 }
 
-/* ===============================
-   SKILLS LIST
-================================ */
 .skills__list {
     padding-left: 2.7rem;
-    transition: .4s;
 }
 
 .skills__data {
     margin-bottom: 1.5rem;
 }
 
-.skills__titles {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-}
-
-.skills__name {
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.skills__number {
-    font-size: 0.85rem;
-    color: #888;
-}
-
 .skills__bar {
     height: 6px;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     background-color: var(--bg-bar);
 }
 
 .skills__percentage {
     display: block;
     height: 100%;
-    border-radius: .25rem;
-    background-color: var(--main-color);
-    transition: width 1s ease;
+    border-radius: 0.25rem;
+    background-color: var(--primary);
 }
 
-/* ===============================
-   ACCORDION ANIMATION
-================================ */
-.skills__close .skills__list {
-    height: 0;
-    overflow: hidden;
-    opacity: 0;
-}
-
-.skills__open .skills__list {
-    height: max-content;
-    opacity: 1;
-}
-
-.skills__open .skills__arrow {
-    transform: rotate(-180deg);
-}
-
-
-/* ===============================
-   THEME BUTTON
-================================ */
-.theme-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: var(--main-color);
-    color: #fff;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 1000;
-}
-
-
-/* --- CONTACT SECTION STYLES --- */
+/* ===================================================
+   8. CONTACT SECTION
+=================================================== */
 #contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 20px;
-  font-family: 'Poppins', sans-serif; /* Recommended font for this look */
-}
-
-.contact-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-  color: var(--text-main);
-}
-
-.subtitle {
-  font-size: 1rem;
-  color: #666;
-}
-
-.contact-details-container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px; /* Spacing between rows */
+    background: var(--bg-section);
+    text-align: center;
 }
 
 .contact-info-row {
-  display: flex;
-  align-items: flex-start; /* Aligns icon with the first line of text */
-  gap: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 25px;
 }
 
 .contact-icon {
-  font-size: 1.5rem;
-  color: #5d81e8; /* The blue color from your icons */
-  margin-top: 5px;
+    font-size: 1.5rem;
+    color: var(--primary);
 }
 
 .contact-label {
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin: 0;
-  color: #1a1a1a;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 .contact-value {
-  font-size: 1rem;
-  color: #777;
-  margin: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
 }
 
-
-/* Core Styling */
+/* ===================================================
+   9. FOOTER
+=================================================== */
 .site-footer {
-  background-color: #5d83dc; /* Matches your image blue */
-  color: white;
-  padding: 60px 20px 20px;
-  font-family: 'Arial', sans-serif;
+    background-color: var(--primary);
+    color: white;
+    padding: 60px 20px 20px;
 }
 
 .footer-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px; /* Adjust spacing between sections */
-  max-width: 1200px;
-  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Brand Section */
-.footer-brand h1 {
-  font-size: 2rem;
-  line-height: 1.1;
-  margin: 0;
-  font-weight: 700;
-}
-
-
-
-/* Social Icons */
-.footer-socials a {
-  color: white;
-  font-size: 1.2rem;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-/* Bottom Copyright */
 .footer-bottom {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 0.8rem;
-  opacity: 0.7;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 0.8rem;
+    opacity: 0.8;
 }
 
+/* ===================================================
+   10. RESPONSIVE DESIGN
+=================================================== */
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 100px;
+    }
 
+    .socials {
+        flex-direction: row;
+        justify-content: center;
+    }
 
+    .circle-container {
+        width: 250px;
+        height: 250px;
+    }
 
+    .about-details-container {
+        flex-direction: column;
+        text-align: center;
+    }
 
-
-
-
-
-
-
+    .about-text-container p {
+        text-align: center;
+    }
+}
