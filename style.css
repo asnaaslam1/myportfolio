@@ -249,133 +249,56 @@ nav {
   filter: brightness(1.1);
 }
 
+/* =========================
+   THEME VARIABLES
+========================= */
+
 :root {
     --main-color: #5d83dc;
     --text-color: #333;
+    --bg-color: #ffffff;
+    --card-bg: #f8f9ff;
     --bg-bar: #e6ecfb;
 }
 
+/* Dark Theme Variables */
+body.dark-theme {
+    --main-color: #5d83dc;
+    --text-color: #ffffff;
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --bg-bar: #2c2c2c;
+}
+
+/* Apply Theme Colors */
 body {
-    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
     color: var(--text-color);
-    margin: 0;
-}
-
-.container {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-/* Section */
-.section {
-    padding: 4rem 0;
-}
-
-.section__title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 0.25rem;
-}
-
-.section__subtitle {
-    display: block;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 3rem;
-}
-
-/* Accordion */
-.skills__content {
-    margin-bottom: 2rem;
+    transition: 0.3s ease;
 }
 
 .skills__header {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 1rem;
-    background: #f8f9ff;
-    border-radius: 8px;
-}
-
-.skills__icon {
-    font-size: 1.8rem;
-    color: var(--main-color);
-    margin-right: 0.75rem;
-}
-
-.skills__title {
-    font-size: 1.2rem;
-}
-
-.skills__arrow {
-    margin-left: auto;
-    font-size: 1.2rem;
-    color: var(--main-color);
-    transition: 0.4s;
-}
-
-/* Skills list */
-.skills__list {
-    padding: 1rem 1.5rem;
-    transition: 0.4s;
-}
-
-.skills__data {
-    margin-bottom: 1.5rem;
-}
-
-.skills__titles {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-}
-
-.skills__name {
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.skills__number {
-    font-size: 0.85rem;
-    color: #888;
+    background: var(--card-bg);
 }
 
 .skills__bar {
-    height: 6px;
-    border-radius: 4px;
     background-color: var(--bg-bar);
 }
 
-.skills__percentage {
-    display: block;
-    height: 100%;
-    border-radius: 4px;
-    background-color: var(--main-color);
-    width: 0;
-    transition: width 1s ease;
+/* Theme Button */
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1000;
 }
-
-/* Percentage widths */
-.html { width: 90%; }
-.js { width: 80%; }
-.java { width: 90%; }
-.leadership { width: 90%; }
-.problem { width: 90%; }
-
-/* Accordion Animation */
-.skills__close .skills__list {
-    height: 0;
-    overflow: hidden;
-    padding: 0 1.5rem;
-}
-
-.skills__open .skills__arrow {
-    transform: rotate(-180deg);
-}
-
 
 
 /* --- CONTACT SECTION STYLES --- */
@@ -402,7 +325,7 @@ body {
 
 .subtitle {
   font-size: 1rem;
-  color:  var(--text-main)
+  color: #666;
 }
 
 .contact-details-container {
