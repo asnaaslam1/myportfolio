@@ -100,7 +100,11 @@
     .socials { order: 3; flex-direction: row; justify-content: center; }
 }
 
-
+/* Responsive */
+@media screen and (max-width: 568px) {
+    .skills__header { margin-bottom: 1.5rem; }
+    .skills__list { padding-left: 0; }
+}
 
 /* --- RESPONSIVE STYLES --- */
 @media (max-width: 768px) {
