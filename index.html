@@ -17,29 +17,43 @@
 
 <body id="home">
 
-  <nav>
-    <div class="logo">Asna Aslam </div>
-    <div class="hamburger-menu" onclick="toggleMenu()">
-      <i class="fa-solid fa-bars"></i>
-    </div>
-    <ul class="nav-links" id="nav-menu">
-      <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-      <li><a href="#about" onclick="toggleMenu()">About</a></li>
-      <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-      <li><a href="#education" onclick="toggleMenu()">Education</a></li>
-      <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-    </ul>
-    <div class="theme-toggle" id="theme-btn">
-      <i class="fa-solid fa-moon"></i>
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-text">Asna</span>
+        <span class="logo-accent">Aslam</span>
+      </div>
+      <div class="hamburger-menu" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#education" onclick="toggleMenu()">Education</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="theme-toggle" id="theme-btn">
+          <i class="fa-solid fa-moon"></i>
+        </div>
+        <a href="#contact" class="nav-cta-btn">Contact Me</a>
+      </div>
     </div>
   </nav>
 
   <main class="hero">
     <aside class="socials">
-      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="#"><i class="fa-regular fa-envelope"></i></a>
-      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn Profile">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="mailto:asnaaslam91@gmail.com" aria-label="Send Email">
+        <i class="fa-regular fa-envelope"></i>
+      </a>
+      <a href="https://github.com" target="_blank" aria-label="GitHub Profile">
+        <i class="fa-brands fa-github"></i>
+      </a>
     </aside>
 
     <section class="hero-text">
@@ -64,12 +78,25 @@
     <section class="hero-img">
       <div class="circle-container">
         <img src="./assets/Profile-pic.jpg" alt="Asna Aslam profile picture" />
+        <div class="floating-card card-1">
+          <i class="fas fa-code"></i>
+          <span>Web Dev</span>
+        </div>
+        <div class="floating-card card-2">
+          <i class="fas fa-palette"></i>
+          <span>UI/UX</span>
+        </div>
+        <div class="floating-card card-3">
+          <i class="fas fa-mobile-alt"></i>
+          <span>Responsive</span>
+        </div>
       </div>
     </section>
   </main>
 
   <section id="about">
     <div class="section-header">
+      <span class="section-badge">Get To Know</span>
       <h2 class="title">About Me</h2>
       <p class="section__text__p1">My introduction</p>
     </div>
@@ -77,19 +104,53 @@
       <div class="about-details-container">
         <div class="about-pic-container">
           <img src="assets/about-pic.jpg" alt="About profile picture" class="about-pic" />
+          <div class="about-pic-overlay">
+            <div class="experience-badge">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <strong>BSc Computer Science</strong>
+                <span>Software Engineering</span>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="about-text-container">
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-award"></i>
+              <div>
+                <h4>Experience</h4>
+                <p>3+ Years Learning</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-briefcase"></i>
+              <div>
+                <h4>Completed</h4>
+                <p>10+ Projects</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-certificate"></i>
+              <div>
+                <h4>Certifications</h4>
+                <p>5+ Certificates</p>
+              </div>
+            </div>
+          </div>
           <p>
             I'm currently pursuing a bachelor's degree in Computer Science
             with a focus on Software Technology. My passion for technology has led me to
             develop a strong foundation in programming languages like Java, Python, C, and C#,
             as well as skills in databases, software engineering, networking, and operating systems.
+          </p>
+          <p>
             I'm proficient in MySQL, SQL Server, HTML, CSS, and PHP, and I'm exploring machine learning
             with tools like Jupyter Notebook. I also work with development environments such as
             Eclipse, NetBeans, and Visual Studio Code, and use Adobe Illustrator for design.
             I'm eager to apply my skills to innovative tech projects.
           </p>
-          <button class="btn btn-color-1" onclick="window.open('assets/resume.pdf')">
+          <button class="btn btn-color-1" onclick="window.open('assets/resume-example.pdf')">
             Download CV <i class="fa-solid fa-file-arrow-down"></i>
           </button>
         </div>
@@ -104,6 +165,7 @@
 
   <section id="skills" class="skills section">
     <div class="section-header">
+      <span class="section-badge">What I Offer</span>
       <h2 class="title">Skills</h2>
       <p class="section__text__p1">My technical level</p>
     </div>
@@ -192,6 +254,7 @@
 
   <section id="education" class="qualification-section">
     <div class="section-header">
+      <span class="section-badge">My Journey</span>
       <h2 class="title">Qualification</h2>
       <p class="section__text__p1">My personal journey</p>
     </div>
@@ -245,54 +308,166 @@
         <div class="timeline-item right">
           <div class="dot"></div>
           <div class="year">2024</div>
+          <div class="content">
+            <h4 class="timeline-title">Diploma of Education, English</h4>
+            <p class="issuer">ESOFT Metro Campus</p>
+          </div>
+        </div>
 
-          <div class="timeline-item right">
-            <div class="dot"></div>
-            <div class="year">2024</div>
-            <div class="content">
-              <h4 class="timeline-title">Diploma of Education, English</h4>
-              <p class="issuer">ESOFT Metro Campus</p>
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="year">2024</div>
+          <div class="content">
+            <h4 class="timeline-title">Diploma of Education, Information Technology</h4>
+            <p class="issuer">ESOFT Metro Campus</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="dot"></div>
+          <div class="year">2023</div>
+          <div class="content">
+            <h4 class="timeline-title">Web Development</h4>
+            <p class="issuer">University of Moratuwa</p>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+          <div class="dot"></div>
+          <div class="year">2021</div>
+          <div class="content">
+            <h4 class="timeline-title">Oracle Cloud Infrastructure Foundations Associate</h4>
+            <p class="issuer">Oracle • Certified 2021</p>
+          </div>
+        </div>
+
+        <div class="timeline-item right">
+          <div class="dot"></div>
+          <div class="year">2023</div>
+          <div class="content">
+            <h4 class="timeline-title">Machine Learning with Python</h4>
+            <p class="issuer">freeCodeCamp</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+         PROJECTS SECTION
+    ========================== -->
+  <section id="projects" class="projects-section">
+    <div class="section-header">
+      <span class="section-badge">Portfolio</span>
+      <h2 class="title">Projects</h2>
+      <p class="section__text__p1">My recent work</p>
+    </div>
+
+    <div class="projects-container">
+      
+      <!-- Project 1 -->
+      <div class="project-card" data-category="web">
+        <div class="project-badge">Featured</div>
+        <div class="project-image">
+          <img src="assets/project-1.png" alt="E-Commerce Platform" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link" aria-label="View Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="View Code">
+                <i class="fab fa-github"></i>
+              </a>
             </div>
           </div>
-
-          <div class="timeline-item left">
-            <div class="dot"></div>
-            <div class="year">2024</div>
-            <div class="content">
-              <h4 class="timeline-title">Diploma of Education, Information Technology</h4>
-              <p class="issuer">ESOFT Metro Campus</p>
-            </div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-category"><i class="fas fa-folder"></i> Web Development</span>
+            <span class="project-date"><i class="far fa-calendar"></i> 2026</span>
           </div>
-
-          <div class="timeline-item right">
-            <div class="dot"></div>
-            <div class="year">2023</div>
-            <div class="content">
-              <h4 class="timeline-title">Web Development</h4>
-              <p class="issuer">University of Moratuwa</p>
-            </div>
+          <h3 class="project-title">E-Commerce Platform</h3>
+          <p class="project-description">
+            A full-stack e-commerce solution with user authentication, product management, 
+            shopping cart, and secure payment integration.
+          </p>
+          <div class="project-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Stripe</span>
           </div>
-
-          <div class="timeline-item left">
-            <div class="dot"></div>
-            <div class="year">2021</div>
-            <div class="content">
-              <h4 class="timeline-title">Oracle Cloud Infrastructure Foundations Associate</h4>
-              <p class="issuer">Oracle • Certified 2021</p>
-            </div>
-          </div>
-
-          <div class="timeline-item right">
-            <div class="dot"></div>
-            <div class="year">2023</div>
-            <div class="content">
-              <h4 class="timeline-title">Machine Learning with Python</h4>
-              <p class="issuer">freeCodeCamp</p>
-            </div>
-          </div>
-
         </div>
       </div>
+
+      <!-- Project 2 -->
+      <div class="project-card" data-category="app">
+        <div class="project-image">
+          <img src="assets/project-2.png" alt="Task Management App" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link" aria-label="View Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="View Code">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-category"><i class="fas fa-folder"></i> Application</span>
+            <span class="project-date"><i class="far fa-calendar"></i> 2025</span>
+          </div>
+          <h3 class="project-title">Task Management App</h3>
+          <p class="project-description">
+            Collaborative task management tool with real-time updates, team collaboration 
+            features, and progress tracking dashboards.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Vue.js</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Tailwind</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card" data-category="design">
+        <div class="project-image">
+          <img src="assets/project-3.png" alt="Weather Dashboard" />
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="project-link" aria-label="View Demo">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="#" class="project-link" aria-label="View Code">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-category"><i class="fas fa-folder"></i> UI/UX Design</span>
+            <span class="project-date"><i class="far fa-calendar"></i> 2025</span>
+          </div>
+          <h3 class="project-title">Weather Dashboard</h3>
+          <p class="project-description">
+            Interactive weather application with location-based forecasts, weather maps, 
+            and detailed meteorological data visualization.
+          </p>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">API</span>
+            <span class="tag">Chart.js</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
 
   <script>
@@ -314,6 +489,7 @@
 
   <section id="contact">
     <div class="section-header">
+      <span class="section-badge">Let's Connect</span>
       <h2 class="title">Contact Me</h2>
       <p class="section__text__p1">Get in touch</p>
     </div>
@@ -363,7 +539,7 @@
             <a href="#" aria-label="GitHub" class="social-link">
               <i class="fab fa-github"></i>
             </a>
-            <a href="#" aria-label="Email" class="social-link">
+            <a href="mailto:asnaaslam91@gmail.com" aria-label="Email" class="social-link">
               <i class="far fa-envelope"></i>
             </a>
             <a href="#" aria-label="Twitter" class="social-link">
@@ -380,6 +556,7 @@
             <li><a href="#about">About Me</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
           </ul>
         </div>
 
@@ -410,6 +587,11 @@
           <p class="copyright">
             &copy; 2026 Asna Aslam. All rights reserved.
           </p>
+          <div class="footer-bottom-links">
+            <a href="#home">Back to Top</a>
+            <span class="separator">•</span>
+            <a href="assets/resume-example.pdf" target="_blank">Download CV</a>
+          </div>
         </div>
       </div>
     </div>
