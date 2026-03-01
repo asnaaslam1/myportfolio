@@ -249,19 +249,20 @@ nav {
   filter: brightness(1.1);
 }
 
-/* =========================
-   THEME VARIABLES
-========================= */
-
+/* ===============================
+   ROOT VARIABLES (LIGHT DEFAULT)
+================================ */
 :root {
     --main-color: #5d83dc;
     --text-color: #333;
     --bg-color: #ffffff;
-    --card-bg: #f8f9ff;
-    --bg-bar: #e6ecfb;
+    --card-bg: #ffffff;
+    --bg-bar: #dae3f8;
 }
 
-/* Dark Theme Variables */
+/* ===============================
+   DARK THEME VARIABLES
+================================ */
 body.dark-theme {
     --main-color: #5d83dc;
     --text-color: #ffffff;
@@ -270,28 +271,141 @@ body.dark-theme {
     --bg-bar: #2c2c2c;
 }
 
-/* Apply Theme Colors */
+/* ===============================
+   GLOBAL
+================================ */
 body {
-    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
     color: var(--text-color);
+    margin: 0;
     transition: 0.3s ease;
 }
 
+.container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.section__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+.section__subtitle {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 3rem;
+}
+
+/* ===============================
+   ACCORDION HEADER
+================================ */
 .skills__header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    padding: 1rem;
     background: var(--card-bg);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.skills__icon {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-right: 0.75rem;
+}
+
+.skills__title {
+    font-size: 1.25rem;
+}
+
+.skills__arrow {
+    margin-left: auto;
+    font-size: 1.2rem;
+    color: var(--main-color);
+    transition: .4s;
+}
+
+/* ===============================
+   SKILLS LIST
+================================ */
+.skills__list {
+    padding-left: 2.7rem;
+    transition: .4s;
+}
+
+.skills__data {
+    margin-bottom: 1.5rem;
+}
+
+.skills__titles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skills__name {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.skills__number {
+    font-size: 0.85rem;
+    color: #888;
 }
 
 .skills__bar {
+    height: 6px;
+    border-radius: .25rem;
     background-color: var(--bg-bar);
 }
 
-/* Theme Button */
+.skills__percentage {
+    display: block;
+    height: 100%;
+    border-radius: .25rem;
+    background-color: var(--main-color);
+    transition: width 1s ease;
+}
+
+/* ===============================
+   ACCORDION ANIMATION
+================================ */
+.skills__close .skills__list {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.skills__open .skills__list {
+    height: max-content;
+    opacity: 1;
+}
+
+.skills__open .skills__arrow {
+    transform: rotate(-180deg);
+}
+
+/* ===============================
+   THEME BUTTON
+================================ */
 .theme-btn {
     position: fixed;
     top: 20px;
     right: 20px;
     background: var(--main-color);
-    color: white;
+    color: #fff;
     border: none;
     padding: 10px 14px;
     border-radius: 50px;

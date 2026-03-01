@@ -100,7 +100,9 @@
     .socials { order: 3; flex-direction: row; justify-content: center; }
 }
 
-/* Responsive */
+/* ===============================
+   RESPONSIVE
+================================ */
 @media screen and (max-width: 768px) {
     .section {
         padding: 3rem 0;
@@ -109,15 +111,16 @@
     .section__title {
         font-size: 1.7rem;
     }
-
-    .skills__header {
-        padding: 0.8rem;
-    }
 }
 
-@media screen and (max-width: 480px) {
-    .container {
-        padding: 0 1rem;
+@media screen and (max-width: 568px) {
+    .skills__header {
+        margin-bottom: 1.5rem;
+        padding: 0.8rem;
+    }
+
+    .skills__list {
+        padding-left: 0;
     }
 
     .skills__title {
@@ -128,6 +131,7 @@
         font-size: 0.9rem;
     }
 }
+
 
 
 /* --- RESPONSIVE STYLES --- */

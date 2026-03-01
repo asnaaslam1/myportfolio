@@ -51,20 +51,38 @@ function toggleSkills(element) {
     }
 }
 
-const headers = document.querySelectorAll(".skills__header");
+// ACCORDION
+function toggleSkills(element) {
+    const parent = element.parentElement;
 
-headers.forEach(header => {
-    header.addEventListener("click", () => {
-        const parent = header.parentElement;
-
-        document.querySelectorAll(".skills__content").forEach(item => {
-            if (item !== parent) {
-                item.classList.remove("skills__open");
-                item.classList.add("skills__close");
-            }
-        });
-
-        parent.classList.toggle("skills__open");
-        parent.classList.toggle("skills__close");
+    document.querySelectorAll(".skills__content").forEach(item => {
+        if (item !== parent) {
+            item.classList.remove("skills__open");
+            item.classList.add("skills__close");
+        }
     });
+
+    parent.classList.toggle("skills__open");
+    parent.classList.toggle("skills__close");
+}
+
+// THEME TOGGLE
+const themeButton = document.getElementById("theme-toggle");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-theme");
+    themeButton.textContent = "☀️";
+}
+
+themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+
+    if (document.body.classList.contains("dark-theme")) {
+        themeButton.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+    } else {
+        themeButton.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+    }
 });
