@@ -181,4 +181,34 @@
   }
 }
 
+  @media (max-width: 768px) {
+      .timeline::before { left: 2.5rem; }
+
+      .timeline-item {
+        grid-template-columns: 5rem 1fr;
+        margin: 3rem 0;
+      }
+
+      .timeline-item.left .content,
+      .timeline-item.right .content {
+        grid-column: 2 / 3;
+        text-align: left;
+      }
+
+      .dot { left: 2.5rem; transform: translateX(-50%); }
+
+      .year {
+        position: static;
+        transform: none;
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+
+      .tabs { gap: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 6rem 1rem 8rem; }
+      .theme-toggle { top: 1rem; right: 1rem; }
+    }
 
