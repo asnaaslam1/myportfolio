@@ -252,35 +252,129 @@ nav {
 :root {
     --main-color: #5d83dc;
     --text-color: #333;
-    --bg-bar: #dae3f8;
+    --bg-bar: #e6ecfb;
 }
 
-body { font-family: 'Poppins', sans-serif; color: var(--text-color); }
-.container { max-width: 768px; margin: 0 auto; padding: 0 1.5rem; }
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    margin: 0;
+}
 
-.section__title { text-align: center; font-size: 2rem; margin-bottom: 0.25rem; }
-.section__subtitle { display: block; text-align: center; font-size: 0.8rem; color: #888; margin-bottom: 3rem; }
+.container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
 
-/* Accordion Header */
-.skills__header { display: flex; align-items: center; cursor: pointer; margin-bottom: 2.5rem; }
-.skills__icon { font-size: 2rem; color: var(--main-color); margin-right: 0.75rem; }
-.skills__title { font-size: 1.25rem; }
-.skills__arrow { margin-left: auto; font-size: 1.2rem; color: var(--main-color); transition: .4s; }
+/* Section */
+.section {
+    padding: 4rem 0;
+}
 
-/* Skills List & Bars */
-.skills__list { row-gap: 1.5rem; padding-left: 2.7rem; transition: .4s; }
-.skills__data { margin-bottom: 1.5rem; }
-.skills__titles { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
-.skills__name { font-size: 0.95rem; font-weight: 500; }
-.skills__number { font-size: 0.85rem; color: #888; }
-.skills__bar { height: 5px; border-radius: .25rem; background-color: var(--bg-bar); }
-.skills__percentage { display: block; height: 100%; border-radius: .25rem; background-color: var(--main-color); }
+.section__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
 
-/* Animation Classes */
-.skills__close .skills__list { height: 0; overflow: hidden; opacity: 0; }
-.skills__open .skills__list { height: max-content; opacity: 1; }
-.skills__open .skills__arrow { transform: rotate(-180deg); }
+.section__subtitle {
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 3rem;
+}
 
+/* Accordion */
+.skills__content {
+    margin-bottom: 2rem;
+}
+
+.skills__header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem;
+    background: #f8f9ff;
+    border-radius: 8px;
+}
+
+.skills__icon {
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-right: 0.75rem;
+}
+
+.skills__title {
+    font-size: 1.2rem;
+}
+
+.skills__arrow {
+    margin-left: auto;
+    font-size: 1.2rem;
+    color: var(--main-color);
+    transition: 0.4s;
+}
+
+/* Skills list */
+.skills__list {
+    padding: 1rem 1.5rem;
+    transition: 0.4s;
+}
+
+.skills__data {
+    margin-bottom: 1.5rem;
+}
+
+.skills__titles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skills__name {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.skills__number {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.skills__bar {
+    height: 6px;
+    border-radius: 4px;
+    background-color: var(--bg-bar);
+}
+
+.skills__percentage {
+    display: block;
+    height: 100%;
+    border-radius: 4px;
+    background-color: var(--main-color);
+    width: 0;
+    transition: width 1s ease;
+}
+
+/* Percentage widths */
+.html { width: 90%; }
+.js { width: 80%; }
+.java { width: 90%; }
+.leadership { width: 90%; }
+.problem { width: 90%; }
+
+/* Accordion Animation */
+.skills__close .skills__list {
+    height: 0;
+    overflow: hidden;
+    padding: 0 1.5rem;
+}
+
+.skills__open .skills__arrow {
+    transform: rotate(-180deg);
+}
 
 
 

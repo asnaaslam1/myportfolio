@@ -50,3 +50,21 @@ function toggleSkills(element) {
         parent.classList.replace('skills__close', 'skills__open');
     }
 }
+
+const headers = document.querySelectorAll(".skills__header");
+
+headers.forEach(header => {
+    header.addEventListener("click", () => {
+        const parent = header.parentElement;
+
+        document.querySelectorAll(".skills__content").forEach(item => {
+            if (item !== parent) {
+                item.classList.remove("skills__open");
+                item.classList.add("skills__close");
+            }
+        });
+
+        parent.classList.toggle("skills__open");
+        parent.classList.toggle("skills__close");
+    });
+});
