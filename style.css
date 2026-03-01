@@ -550,6 +550,141 @@ nav.scrolled .nav-container {
     transition: width 0.6s ease;
 }
 
+ :root {
+      --bg: #0b1120;
+      --header-bg: #1e293b;
+      --text-main: #ffffff;
+      --text-muted: #94a3b8;
+      --accent-purple: #6366f1; /* Your specific bar color */
+      --track: #232d3f; /* Your specific track color */
+      --border: #334155;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Accordion Container */
+    .accordion {
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    /* Header Styling */
+    .accordion-header {
+      background: var(--header-bg);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background: #243146;
+    }
+
+    .title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .chevron {
+      font-size: 0.8rem;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-header.active .chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Content Styling */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+      padding: 0 1.5rem;
+    }
+
+    .accordion-content.active {
+      max-height: 2000px; /* Large enough for content */
+      transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
+      padding: 2rem 1.5rem;
+    }
+
+    /* Category Titles */
+    .category-title {
+      color: var(--accent-purple);
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 2rem 0 1.2rem 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--track);
+    }
+
+    .category-title:first-child {
+      margin-top: 0;
+    }
+
+    /* Skill Item & Progress Bar */
+    .skill-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .progress-track {
+      height: 6px;
+      width: 100%;
+      background: var(--track);
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--accent-purple);
+      border-radius: 10px;
+      position: absolute;
+      box-shadow: 0 0 12px rgba(99, 102, 241, 0.3);
+      width: 0; /* Animated via CSS Variable */
+      transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Trigger animation when accordion is open */
+    .accordion-content.active .progress-fill {
+      width: var(--percent);
+    }
+
 /* ===================================================
    8. QUALIFICATION SECTION
 =================================================== */
