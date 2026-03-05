@@ -1779,3 +1779,92 @@ img {
 .project-date i {
     color: var(--primary);
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #fff;
+}
+
+.experience {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.experience h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  margin-bottom: 50px;
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  background: #111c2d;
+  padding: 40px 30px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: #16223b;
+}
+
+.icon {
+  font-size: 30px;
+  color: #3b82f6;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.card a {
+  text-decoration: none;
+  color: #3b82f6;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.card a:hover {
+  color: #60a5fa;
+}
+
+/* ✅ Responsive Design */
+
+@media (max-width: 992px) {
+  .card-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .experience h2 {
+    font-size: 28px;
+  }
+}
