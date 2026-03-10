@@ -112,6 +112,42 @@
         text-align: center;
     }
 
+    /* ===================================================
+   RESPONSIVE
+=================================================== */
+
+/* Tablet */
+
+@media (max-width: 992px){
+
+.card-wrapper{
+    grid-template-columns: repeat(2,1fr);
+}
+
+}
+
+/* Mobile */
+
+@media (max-width: 600px){
+
+.experience{
+    padding: 4rem 5%;
+}
+
+.card-wrapper{
+    grid-template-columns: 1fr;
+}
+
+.experience h2{
+    font-size: 2rem;
+}
+
+.card{
+    padding: 2rem;
+}
+
+}
+
     /* Projects */
     .projects-container {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

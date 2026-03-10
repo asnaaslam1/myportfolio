@@ -704,6 +704,90 @@ nav.scrolled .nav-container {
     font-size: 0.85rem;
 }
 
+/* ===================================================
+   EXPERIENCE SECTION
+=================================================== */
+
+.experience{
+    background: var(--bg-section);
+    padding: 5rem 10%;
+    text-align: center;
+}
+
+.experience h2{
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.experience .subtitle{
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-size: 1rem;
+}
+
+/* CARD GRID */
+
+.card-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* CARD STYLE */
+
+.card{
+    background: var(--card-bg);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.card:hover{
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+/* ICON */
+
+.icon{
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* TITLE */
+
+.card h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+/* LINK */
+
+.card a{
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+.card a:hover{
+    gap: 10px;
+}
+
 
 
 
